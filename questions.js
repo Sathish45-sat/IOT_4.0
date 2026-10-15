@@ -385,3 +385,6 @@ const assignmentsData = {
     ]
   }
 };
+
+// Backwards compatibility alias for cached sessions
+const questionsData = assignmentsData["week1"].questions;

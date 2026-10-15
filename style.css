@@ -337,6 +337,26 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
   gap: 0.45rem;
+  max-height: 175px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.palette-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.palette-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.palette-grid::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+.palette-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
 .palette-btn {

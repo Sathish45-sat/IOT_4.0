@@ -206,6 +206,9 @@ function renderPalette() {
 
     if (idx === state.currentIndex) {
       btn.classList.add('current');
+      setTimeout(() => {
+        btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }, 0);
     }
 
     const ans = state.userAnswers[idx];
@@ -259,7 +262,8 @@ function renderQuestion() {
   elements.resultsCard.classList.remove('show');
 
   // Badge & Status
-  elements.questionBadge.textContent = `Question ${state.currentIndex + 1} of ${state.questions.length}`;
+  const originTag = q.weekOrigin ? ` • ${q.weekOrigin}` : '';
+  elements.questionBadge.textContent = `Question ${state.currentIndex + 1} of ${state.questions.length}${originTag}`;
   elements.questionText.textContent = q.question;
 
   // Diagram rendering if available
@@ -503,9 +507,11 @@ function renderReviewList() {
       userSelectionText = `${userLetter}. ${q.options[ans.selectedIndex]}`;
     }
 
+    const originTag = q.weekOrigin ? `<span class="review-week-badge" style="display:inline-block; font-size:0.75rem; background:var(--accent-primary-light); color:var(--accent-primary); padding:2px 8px; border-radius:12px; margin-left:8px; font-weight:600; border:1px solid rgba(99,102,241,0.2);">${q.weekOrigin}</span>` : '';
+
     item.innerHTML = `
       <div class="review-item-header">
-        <div class="review-item-title">Q${idx + 1}: ${q.question}</div>
+        <div class="review-item-title">Q${idx + 1}: ${q.question} ${originTag}</div>
         ${statusTag}
       </div>
       <div class="review-item-answers">
@@ -523,12 +529,29 @@ function renderReviewList() {
   }
 }
 
+// Array shuffle utility
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 // Switch Assignment / Week
 function switchAssignment(key) {
   if (typeof assignmentsData === 'undefined' || !assignmentsData[key]) return;
   sfx.playClick();
   state.currentAssignmentKey = key;
-  state.questions = [...assignmentsData[key].questions];
+
+  // If all_mixed, re-shuffle fresh for this session
+  if (key === 'all_mixed') {
+    state.questions = shuffleArray(assignmentsData[key].questions);
+  } else {
+    state.questions = [...assignmentsData[key].questions];
+  }
+
   state.currentIndex = 0;
   state.userAnswers = {};
   state.timerSeconds = 0;
@@ -563,6 +586,8 @@ function restartQuiz(newQuestions = null) {
   sfx.playClick();
   if (newQuestions && newQuestions.length > 0) {
     state.questions = newQuestions;
+  } else if (state.currentAssignmentKey === 'all_mixed' && typeof assignmentsData !== 'undefined' && assignmentsData['all_mixed']) {
+    state.questions = shuffleArray(assignmentsData['all_mixed'].questions);
   } else {
     state.questions = typeof assignmentsData !== 'undefined' && assignmentsData[state.currentAssignmentKey]
       ? [...assignmentsData[state.currentAssignmentKey].questions]

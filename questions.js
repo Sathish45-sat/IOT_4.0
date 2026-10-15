@@ -2244,3 +2244,44 @@ const assignmentsData = {
     ]
   }
 };
+
+// Automatically build the mixed full-course practice set (All 12 Weeks Combined)
+(function() {
+  if (typeof assignmentsData === 'undefined') return;
+
+  function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  const allQ = [];
+  Object.keys(assignmentsData).forEach(wKey => {
+    if (wKey.startsWith('week')) {
+      const w = assignmentsData[wKey];
+      w.questions.forEach(q => {
+        allQ.push({
+          id: allQ.length + 1,
+          originalId: q.id,
+          question: q.question,
+          options: [...q.options],
+          correctIndex: q.correctIndex,
+          explanation: q.explanation,
+          diagram: q.diagram,
+          weekOrigin: w.title.split(':')[0].trim(),
+          sourceTopic: w.topic
+        });
+      });
+    }
+  });
+
+  assignmentsData["all_mixed"] = {
+    id: "all_mixed",
+    title: "⚡ All Weeks Mixed : Complete Mock (180 MCQs)",
+    topic: "Comprehensive NPTEL Exam Practice (All 12 Weeks Mixed)",
+    questions: shuffleArray(allQ)
+  };
+})();

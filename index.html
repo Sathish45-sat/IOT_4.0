@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NPTEL MCQ Practice Portal | IoT & Sensor Networks</title>
-  <meta name="description" content="Interactive frontend-only NPTEL practice website with instant feedback, question palette, score analytics, and explanations.">
-  
+  <meta name="description"
+    content="Interactive frontend-only NPTEL practice website with instant feedback, question palette, score analytics, and explanations.">
+
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css?v=2.0">
 </head>
+
 <body>
 
   <div class="app-container">
@@ -43,14 +48,15 @@
           <option value="week10">Week 10 : Assignment 10</option>
           <option value="week11">Week 11 : Assignment 11</option>
           <option value="week12">Week 12 : Assignment 12</option>
-          <option value="all_mixed">⚡ All Weeks Mixed : Complete Mock (180 MCQs)</option>
         </select>
       </div>
 
       <div class="header-actions">
-        <button id="soundToggle" class="icon-btn" title="Toggle Sound Feedback" aria-label="Toggle Sound Feedback">🔔</button>
+        <button id="soundToggle" class="icon-btn" title="Toggle Sound Feedback"
+          aria-label="Toggle Sound Feedback">🔔</button>
         <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">☀️</button>
-        <button id="helpBtn" class="icon-btn" title="How to Modify Questions" aria-label="Help & Instructions">⚙️</button>
+        <button id="helpBtn" class="icon-btn" title="How to Modify Questions"
+          aria-label="Help & Instructions">⚙️</button>
       </div>
     </header>
 
@@ -139,7 +145,8 @@
     <section id="resultsCard" class="results-card" aria-label="Practice Results">
       <span id="resultsBadge" class="results-badge">🏆 Practice Complete</span>
       <h2 id="resultsTitle" class="results-title">Quiz Summary</h2>
-      <p id="resultsSubtitle" class="results-subtitle">Here is a comprehensive breakdown of your practice test performance.</p>
+      <p id="resultsSubtitle" class="results-subtitle">Here is a comprehensive breakdown of your practice test
+        performance.</p>
 
       <!-- Circular Score Gauge -->
       <div class="score-gauge-wrapper">
@@ -205,7 +212,8 @@
 
     <!-- Keyboard Shortcuts Hint -->
     <div class="keyboard-hints">
-      <span><kbd class="kbd">1</kbd> - <kbd class="kbd">4</kbd> or <kbd class="kbd">A</kbd> - <kbd class="kbd">D</kbd> Pick Option</span>
+      <span><kbd class="kbd">1</kbd> - <kbd class="kbd">4</kbd> or <kbd class="kbd">A</kbd> - <kbd class="kbd">D</kbd>
+        Pick Option</span>
       <span><kbd class="kbd">←</kbd> Previous</span>
       <span><kbd class="kbd">→</kbd> Next</span>
     </div>
@@ -222,37 +230,41 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 id="modalTitle" class="modal-title">How to Modify or Add Questions</h3>
-        <button id="closeHelpBtn" class="icon-btn" style="width: 32px; height: 32px;" aria-label="Close modal">✕</button>
+        <button id="closeHelpBtn" class="icon-btn" style="width: 32px; height: 32px;"
+          aria-label="Close modal">✕</button>
       </div>
       <div class="modal-body">
-        <p>This practice portal is designed to be 100% frontend and effortlessly customizable. All questions are neatly organized inside the <strong><code>questions.js</code></strong> file.</p>
-        
+        <p>This practice portal is designed to be 100% frontend and effortlessly customizable. All questions are neatly
+          organized inside the <strong><code>questions.js</code></strong> file.</p>
+
         <h4 style="margin-top: 1rem; color: var(--text-primary);">Adding a New Week / Assignment:</h4>
         <p>Simply open <code>questions.js</code> and add a new entry to the <code>assignmentsData</code> object:</p>
-        
+
         <div class="code-snippet">
-"week3": {
-  id: "week3",
-  title: "Week 03 : Assignment 03",
-  topic: "Topic Title Here",
-  questions: [
-    {
-      id: 1,
-      question: "Your question text here...",
-      options: ["Option A", "Option B", "Option C", "Option D"],
-      correctIndex: 1, // 0 for A, 1 for B, 2 for C, 3 for D
-      explanation: "Detailed explanation to display when answered."
-    }
-  ]
-}
+          "week3": {
+          id: "week3",
+          title: "Week 03 : Assignment 03",
+          topic: "Topic Title Here",
+          questions: [
+          {
+          id: 1,
+          question: "Your question text here...",
+          options: ["Option A", "Option B", "Option C", "Option D"],
+          correctIndex: 1, // 0 for A, 1 for B, 2 for C, 3 for D
+          explanation: "Detailed explanation to display when answered."
+          }
+          ]
+          }
         </div>
 
         <h4 style="margin-top: 1rem; color: var(--text-primary);">Key Highlights:</h4>
         <ul style="padding-left: 1.25rem; margin-top: 0.5rem;">
-          <li><strong>Instant visual feedback:</strong> Green for correct, Red for incorrect with automatic highlighting of the correct answer.</li>
+          <li><strong>Instant visual feedback:</strong> Green for correct, Red for incorrect with automatic highlighting
+            of the correct answer.</li>
           <li><strong>Quick Navigation:</strong> Jump to any question instantly via the top palette.</li>
           <li><strong>Comprehensive Review:</strong> View questions by status (All, Incorrect, Correct) at the end.</li>
-          <li><strong>Offline & Local:</strong> Double-click <code>index.html</code> to run anywhere in any browser.</li>
+          <li><strong>Offline & Local:</strong> Double-click <code>index.html</code> to run anywhere in any browser.
+          </li>
         </ul>
       </div>
       <div class="modal-footer">
@@ -262,7 +274,8 @@
   </div>
 
   <!-- Scripts with cache busting -->
-  <script src="questions.js?v=2.2"></script>
-  <script src="app.js?v=2.2"></script>
+  <script src="questions.js?v=2.4"></script>
+  <script src="app.js?v=2.4"></script>
 </body>
+
 </html>

@@ -39,7 +39,7 @@ class SoundFX {
       this.init();
       if (!this.ctx) return;
       const now = this.ctx.currentTime;
-      
+
       const osc1 = this.ctx.createOscillator();
       const osc2 = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
@@ -76,7 +76,7 @@ class SoundFX {
       this.init();
       if (!this.ctx) return;
       const now = this.ctx.currentTime;
-      
+
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
 
@@ -115,7 +115,7 @@ class SoundFX {
       gain.connect(this.ctx.destination);
       osc.start(now);
       osc.stop(now + 0.05);
-    } catch (e) {}
+    } catch (e) { }
   }
 }
 
@@ -206,9 +206,6 @@ function renderPalette() {
 
     if (idx === state.currentIndex) {
       btn.classList.add('current');
-      setTimeout(() => {
-        btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      }, 0);
     }
 
     const ans = state.userAnswers[idx];
@@ -234,7 +231,7 @@ function updateStats() {
   const total = state.questions.length;
   const answeredKeys = Object.keys(state.userAnswers);
   const answeredCount = answeredKeys.length;
-  
+
   let correctCount = 0;
   let wrongCount = 0;
 
@@ -388,7 +385,6 @@ function goToQuestion(index) {
   if (index >= 0 && index < state.questions.length) {
     state.currentIndex = index;
     renderQuestion();
-    window.scrollTo({ top: elements.quizCard.offsetTop - 30, behavior: 'smooth' });
   }
 }
 
@@ -544,14 +540,11 @@ function switchAssignment(key) {
   if (typeof assignmentsData === 'undefined' || !assignmentsData[key]) return;
   sfx.playClick();
   state.currentAssignmentKey = key;
-
-  // If all_mixed, re-shuffle fresh for this session
   if (key === 'all_mixed') {
     state.questions = shuffleArray(assignmentsData[key].questions);
   } else {
     state.questions = [...assignmentsData[key].questions];
   }
-
   state.currentIndex = 0;
   state.userAnswers = {};
   state.timerSeconds = 0;

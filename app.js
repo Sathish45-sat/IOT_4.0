@@ -4,8 +4,11 @@
  */
 
 // Application State
+const defaultAssignmentKey = (typeof assignmentsData !== 'undefined' && Object.keys(assignmentsData)[0]) || 'week1';
+
 const state = {
-  questions: [...questionsData],
+  currentAssignmentKey: defaultAssignmentKey,
+  questions: (typeof assignmentsData !== 'undefined' && assignmentsData[defaultAssignmentKey]) ? [...assignmentsData[defaultAssignmentKey].questions] : [],
   currentIndex: 0,
   userAnswers: {}, // map of { questionIndex: { selectedIndex, isCorrect } }
   soundEnabled: true,
@@ -126,6 +129,8 @@ const elements = {
   helpModal: document.getElementById('helpModal'),
   closeHelpBtn: document.getElementById('closeHelpBtn'),
   modalCloseFooterBtn: document.getElementById('modalCloseFooterBtn'),
+  assignmentSelect: document.getElementById('assignmentSelect'),
+  currentTopic: document.getElementById('currentTopic'),
 
   // Stats
   statAnswered: document.getElementById('statAnswered'),
@@ -518,13 +523,50 @@ function renderReviewList() {
   }
 }
 
+// Switch Assignment / Week
+function switchAssignment(key) {
+  if (typeof assignmentsData === 'undefined' || !assignmentsData[key]) return;
+  sfx.playClick();
+  state.currentAssignmentKey = key;
+  state.questions = [...assignmentsData[key].questions];
+  state.currentIndex = 0;
+  state.userAnswers = {};
+  state.timerSeconds = 0;
+  state.reviewFilter = 'all';
+
+  if (elements.currentTopic) {
+    elements.currentTopic.textContent = assignmentsData[key].topic || "IoT Practice";
+  }
+
+  elements.quizCard.style.display = 'block';
+  elements.resultsCard.classList.remove('show');
+  startTimer();
+  renderQuestion();
+}
+
+// Populate Assignment Dropdown dynamically
+function populateAssignmentDropdown() {
+  if (!elements.assignmentSelect || typeof assignmentsData === 'undefined') return;
+  elements.assignmentSelect.innerHTML = '';
+  Object.keys(assignmentsData).forEach(key => {
+    const item = assignmentsData[key];
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = item.title;
+    if (key === state.currentAssignmentKey) opt.selected = true;
+    elements.assignmentSelect.appendChild(opt);
+  });
+}
+
 // Reset / Restart Entire Practice
 function restartQuiz(newQuestions = null) {
   sfx.playClick();
   if (newQuestions && newQuestions.length > 0) {
     state.questions = newQuestions;
   } else {
-    state.questions = [...questionsData];
+    state.questions = typeof assignmentsData !== 'undefined' && assignmentsData[state.currentAssignmentKey]
+      ? [...assignmentsData[state.currentAssignmentKey].questions]
+      : [];
   }
   state.currentIndex = 0;
   state.userAnswers = {};
@@ -623,6 +665,10 @@ function setupEventListeners() {
   elements.themeToggle.addEventListener('click', toggleTheme);
   elements.soundToggle.addEventListener('click', toggleSound);
 
+  if (elements.assignmentSelect) {
+    elements.assignmentSelect.addEventListener('change', (e) => switchAssignment(e.target.value));
+  }
+
   elements.helpBtn.addEventListener('click', openHelp);
   elements.closeHelpBtn.addEventListener('click', closeHelp);
   elements.modalCloseFooterBtn.addEventListener('click', closeHelp);
@@ -649,6 +695,12 @@ function setupEventListeners() {
 // App Initialization
 function init() {
   initTheme();
+  populateAssignmentDropdown();
+  if (typeof assignmentsData !== 'undefined' && assignmentsData[state.currentAssignmentKey]) {
+    if (elements.currentTopic) {
+      elements.currentTopic.textContent = assignmentsData[state.currentAssignmentKey].topic || "IoT Practice";
+    }
+  }
   setupEventListeners();
   startTimer();
   renderQuestion();

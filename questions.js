@@ -383,6 +383,193 @@ const assignmentsData = {
         explanation: "Agility in Industry 4.0 refers to the capability of systems to rapidly adapt, exhibit high operational flexibility, and autonomously self-configure."
       }
     ]
+  },
+  "week3": {
+    id: "week3",
+    title: "Week 03 : Assignment 03",
+    topic: "Cyber Physical Systems (CPS), 5C Architecture & AI in IIoT",
+    questions: [
+      {
+        id: 1,
+        question: "What does \"reactive computation\" in CPS signify?",
+        options: [
+          "Systems with zero response time",
+          "Interaction with the environment in an ongoing manner",
+          "Predefined computation processes",
+          "Complete isolation from physical feedback"
+        ],
+        correctIndex: 1,
+        explanation: "Reactive computation in Cyber-Physical Systems (CPS) continuously tracks, interacts with, and responds to environmental inputs and changes in an ongoing manner."
+      },
+      {
+        id: 2,
+        question: "Fill in the blanks. In healthcare applications, CPS is used for __________.",
+        options: [
+          "Image-guided surgery and therapy",
+          "Manual monitoring of vitals",
+          "Static hospital management systems",
+          "Front desk management"
+        ],
+        correctIndex: 0,
+        explanation: "In healthcare, CPS integrates sensing, computational intelligence, and actuation for advanced image-guided surgery, robotic therapy, and automated life support."
+      },
+      {
+        id: 3,
+        question: "Which level in the \"5C Architecture\" ensures the gathering of precise status information of machines?",
+        options: [
+          "Conversion",
+          "Cognition",
+          "Cyber",
+          "Configuration"
+        ],
+        correctIndex: 2,
+        explanation: "The Cyber level functions as the central information hub where complex analytics gather precise fleet and machine status information."
+      },
+      {
+        id: 4,
+        question: "Fill in the blanks. Intelligent sensors are capable of __________________.",
+        options: [
+          "Only sensing data",
+          "Processing sensed data and managing external sensors/devices",
+          "Limited communication",
+          "Basic analog-to-digital conversion"
+        ],
+        correctIndex: 1,
+        explanation: "Intelligent sensors possess on-board microprocessing capabilities to perform local data conditioning, self-testing, and external device control."
+      },
+      {
+        id: 5,
+        question: "How many steps are there in the PLM solution approach in Industry 4.0?",
+        options: [
+          "10",
+          "12",
+          "8",
+          "7"
+        ],
+        correctIndex: 0,
+        explanation: "The structured Product Lifecycle Management (PLM) solution approach in Industry 4.0 consists of 10 systematic implementation steps."
+      },
+      {
+        id: 6,
+        question: "Which of the following is not a key component of an AR Device?",
+        options: [
+          "Sensors",
+          "Cameras",
+          "Projection Screen",
+          "Remote Control"
+        ],
+        correctIndex: 3,
+        explanation: "Augmented Reality (AR) headsets integrate onboard sensors, cameras, displays/optics, and microprocessors. Remote controls are not intrinsic key components."
+      },
+      {
+        id: 7,
+        question: "Which of the following is NOT a challenge of AI in IIoT?",
+        options: [
+          "Connecting devices",
+          "Understanding data",
+          "Training AI models",
+          "Lack of available data"
+        ],
+        correctIndex: 3,
+        explanation: "IIoT generates an enormous deluge of telemetry data from industrial machines, so a lack of data is not a challenge—rather, processing and understanding that massive data is the challenge."
+      },
+      {
+        id: 8,
+        question: "Which of the following is not one of the primary constraints of mobile CPS?",
+        options: [
+          "Stability of the network",
+          "Power requirement",
+          "Security",
+          "Design aesthetics"
+        ],
+        correctIndex: 3,
+        explanation: "Mobile Cyber-Physical Systems are functionally constrained by battery power, intermittent wireless network stability, and security risks, not aesthetic design."
+      },
+      {
+        id: 9,
+        question: "What are the components of the 5C architecture for CPS?",
+        options: [
+          "Connection, Conversion, Cyber, Cognition, Configuration",
+          "Creation, Controlling, Continuation, Convergence, Compatibility",
+          "Calculation, Catalysis, Convergence, Convenience, Cognizance",
+          "None of these"
+        ],
+        correctIndex: 0,
+        explanation: "The 5C architecture consists of: Connection (Level 1), Conversion (Level 2), Cyber (Level 3), Cognition (Level 4), and Configuration (Level 5)."
+      },
+      {
+        id: 10,
+        question: "What is one of the key features of CPS in terms of computation?",
+        options: [
+          "Static computation",
+          "Reactive computation",
+          "Limited computation",
+          "Redundant computation"
+        ],
+        correctIndex: 1,
+        explanation: "CPS computation is fundamentally reactive—it maintains an ongoing, event-driven interaction with physical world variables and actuators."
+      },
+      {
+        id: 11,
+        question: "What is a collaboration platform in the context of Industry 4.0?",
+        options: [
+          "A type of business software that combines organizational networking capacities with operations",
+          "A social media platform for employees",
+          "A traditional project management tool",
+          "A financial management system"
+        ],
+        correctIndex: 0,
+        explanation: "In Industry 4.0, a collaboration platform is an enterprise software system unifying networking, shared digital engineering models, and plant operations."
+      },
+      {
+        id: 12,
+        question: "What is a key feature of Augmented Reality (AR)?",
+        options: [
+          "Completely replacing the physical environment",
+          "Enhancing the present perception of reality",
+          "Only providing auditory feedback",
+          "Operating in isolated systems"
+        ],
+        correctIndex: 1,
+        explanation: "Augmented Reality (AR) enhances our perception of physical reality by overlaying contextual digital information and computer-generated graphics onto real-world scenes."
+      },
+      {
+        id: 13,
+        question: "Who proposed the first use of the phrase \"Artificial Intelligence\"?",
+        options: [
+          "Alan Turing",
+          "John McCarthy",
+          "Marvin Minsky",
+          "Herbert Simon"
+        ],
+        correctIndex: 1,
+        explanation: "Computer scientist John McCarthy coined the phrase 'Artificial Intelligence' in 1955 when organizing the historic 1956 Dartmouth Conference."
+      },
+      {
+        id: 14,
+        question: "Which of the following statements is true?",
+        options: [
+          "A program without AI uses a large knowledge base and a heuristic search method",
+          "A program with AI uses a large database and an algorithmic search method",
+          "A program with AI uses a large knowledge base and a heuristic search method",
+          "A program without AI uses a large database and a heuristic search method"
+        ],
+        correctIndex: 2,
+        explanation: "AI programs utilize knowledge bases and heuristic search techniques to reason and infer, whereas non-AI programs rely on strict procedural algorithms over databases."
+      },
+      {
+        id: 15,
+        question: "Which of the following are constraints of mobile CPS?",
+        options: [
+          "Network stability",
+          "Power requirement",
+          "Security",
+          "All of the above"
+        ],
+        correctIndex: 3,
+        explanation: "Mobile CPS systems must manage all three major constraints: volatile wireless network connectivity, restricted battery life/power, and heightened security vulnerabilities."
+      }
+    ]
   }
 };
 

@@ -4,11 +4,18 @@
  */
 
 // Application State
-const defaultAssignmentKey = (typeof assignmentsData !== 'undefined' && Object.keys(assignmentsData)[0]) || 'week1';
+const savedCourseKey = localStorage.getItem('nptel_course') || 'iot4';
+const initialCourse = (typeof coursesData !== 'undefined' && coursesData[savedCourseKey])
+  ? coursesData[savedCourseKey]
+  : ((typeof coursesData !== 'undefined' && coursesData.iot4) ? coursesData.iot4 : null);
+
+const initialAssignments = initialCourse ? initialCourse.assignments : (typeof assignmentsData !== 'undefined' ? assignmentsData : {});
+const initialAssignmentKey = Object.keys(initialAssignments)[0] || 'week1';
 
 const state = {
-  currentAssignmentKey: defaultAssignmentKey,
-  questions: (typeof assignmentsData !== 'undefined' && assignmentsData[defaultAssignmentKey]) ? [...assignmentsData[defaultAssignmentKey].questions] : [],
+  currentCourseKey: savedCourseKey,
+  currentAssignmentKey: initialAssignmentKey,
+  questions: (initialAssignments[initialAssignmentKey]) ? [...initialAssignments[initialAssignmentKey].questions] : [],
   currentIndex: 0,
   userAnswers: {}, // map of { questionIndex: { selectedIndex, isCorrect } }
   soundEnabled: true,
@@ -129,6 +136,7 @@ const elements = {
   helpModal: document.getElementById('helpModal'),
   closeHelpBtn: document.getElementById('closeHelpBtn'),
   modalCloseFooterBtn: document.getElementById('modalCloseFooterBtn'),
+  courseSelect: document.getElementById('courseSelect'),
   assignmentSelect: document.getElementById('assignmentSelect'),
   currentTopic: document.getElementById('currentTopic'),
 
@@ -535,15 +543,50 @@ function shuffleArray(arr) {
   return copy;
 }
 
+// Helper to get active course and its assignments
+function getActiveCourse() {
+  if (typeof coursesData !== 'undefined' && coursesData[state.currentCourseKey]) {
+    return coursesData[state.currentCourseKey];
+  }
+  return null;
+}
+
+function getActiveAssignments() {
+  const course = getActiveCourse();
+  if (course && course.assignments) return course.assignments;
+  if (typeof assignmentsData !== 'undefined') return assignmentsData;
+  return {};
+}
+
+// Switch Course
+function switchCourse(courseKey) {
+  if (typeof coursesData === 'undefined' || !coursesData[courseKey]) return;
+  sfx.playClick();
+  state.currentCourseKey = courseKey;
+  localStorage.setItem('nptel_course', courseKey);
+
+  const course = coursesData[courseKey];
+  const assignments = course.assignments;
+  const firstKey = Object.keys(assignments)[0];
+
+  if (elements.courseSelect) {
+    elements.courseSelect.value = courseKey;
+  }
+
+  populateAssignmentDropdown();
+  switchAssignment(firstKey);
+}
+
 // Switch Assignment / Week
 function switchAssignment(key) {
-  if (typeof assignmentsData === 'undefined' || !assignmentsData[key]) return;
+  const assignments = getActiveAssignments();
+  if (!assignments[key]) return;
   sfx.playClick();
   state.currentAssignmentKey = key;
   if (key === 'all_mixed') {
-    state.questions = shuffleArray(assignmentsData[key].questions);
+    state.questions = shuffleArray(assignments[key].questions);
   } else {
-    state.questions = [...assignmentsData[key].questions];
+    state.questions = [...assignments[key].questions];
   }
   state.currentIndex = 0;
   state.userAnswers = {};
@@ -551,7 +594,9 @@ function switchAssignment(key) {
   state.reviewFilter = 'all';
 
   if (elements.currentTopic) {
-    elements.currentTopic.textContent = assignmentsData[key].topic || "IoT Practice";
+    const course = getActiveCourse();
+    const prefix = course ? `${course.shortTitle} • ` : '';
+    elements.currentTopic.textContent = `${prefix}${assignments[key].topic || "Practice"}`;
   }
 
   elements.quizCard.style.display = 'block';
@@ -562,10 +607,11 @@ function switchAssignment(key) {
 
 // Populate Assignment Dropdown dynamically
 function populateAssignmentDropdown() {
-  if (!elements.assignmentSelect || typeof assignmentsData === 'undefined') return;
+  if (!elements.assignmentSelect) return;
+  const assignments = getActiveAssignments();
   elements.assignmentSelect.innerHTML = '';
-  Object.keys(assignmentsData).forEach(key => {
-    const item = assignmentsData[key];
+  Object.keys(assignments).forEach(key => {
+    const item = assignments[key];
     const opt = document.createElement('option');
     opt.value = key;
     opt.textContent = item.title;
@@ -577,13 +623,14 @@ function populateAssignmentDropdown() {
 // Reset / Restart Entire Practice
 function restartQuiz(newQuestions = null) {
   sfx.playClick();
+  const assignments = getActiveAssignments();
   if (newQuestions && newQuestions.length > 0) {
     state.questions = newQuestions;
-  } else if (state.currentAssignmentKey === 'all_mixed' && typeof assignmentsData !== 'undefined' && assignmentsData['all_mixed']) {
-    state.questions = shuffleArray(assignmentsData['all_mixed'].questions);
+  } else if (state.currentAssignmentKey === 'all_mixed' && assignments['all_mixed']) {
+    state.questions = shuffleArray(assignments['all_mixed'].questions);
   } else {
-    state.questions = typeof assignmentsData !== 'undefined' && assignmentsData[state.currentAssignmentKey]
-      ? [...assignmentsData[state.currentAssignmentKey].questions]
+    state.questions = assignments[state.currentAssignmentKey]
+      ? [...assignments[state.currentAssignmentKey].questions]
       : [];
   }
   state.currentIndex = 0;
@@ -683,6 +730,10 @@ function setupEventListeners() {
   elements.themeToggle.addEventListener('click', toggleTheme);
   elements.soundToggle.addEventListener('click', toggleSound);
 
+  if (elements.courseSelect) {
+    elements.courseSelect.addEventListener('change', (e) => switchCourse(e.target.value));
+  }
+
   if (elements.assignmentSelect) {
     elements.assignmentSelect.addEventListener('change', (e) => switchAssignment(e.target.value));
   }
@@ -713,10 +764,16 @@ function setupEventListeners() {
 // App Initialization
 function init() {
   initTheme();
+  if (elements.courseSelect) {
+    elements.courseSelect.value = state.currentCourseKey;
+  }
   populateAssignmentDropdown();
-  if (typeof assignmentsData !== 'undefined' && assignmentsData[state.currentAssignmentKey]) {
+  const course = getActiveCourse();
+  const assignments = getActiveAssignments();
+  if (assignments[state.currentAssignmentKey]) {
     if (elements.currentTopic) {
-      elements.currentTopic.textContent = assignmentsData[state.currentAssignmentKey].topic || "IoT Practice";
+      const prefix = course ? `${course.shortTitle} • ` : '';
+      elements.currentTopic.textContent = `${prefix}${assignments[state.currentAssignmentKey].topic || "Practice"}`;
     }
   }
   setupEventListeners();

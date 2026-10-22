@@ -1,6 +1,14 @@
-# NPTEL IoT 4.0 - Practice Portal
+# NPTEL Practice Portal — Multi-Course MCQ Hub
 
-An interactive, responsive, frontend-only practice website for NPTEL Online Certification Exam preparation (IoT 4.0 & Sensor Networks).
+An interactive, responsive, frontend-only practice website for NPTEL Online Certification Exam preparation.
+
+### 📚 Supported Courses:
+1. **Introduction to Industry 4.0 and Industrial Internet of Things (IoT 4.0)**
+   - 12 Weeks / Assignments (180 MCQs total)
+   - ⚡ All Weeks Mixed : Complete Mock (180 MCQs)
+2. **Design & Implementation of Human-Computer Interfaces (HCI - IIT Guwahati)**
+   - 12 Weeks / Assignments (120 MCQs total)
+   - ⚡ All Weeks Mixed : Complete Mock (120 MCQs)
 
 ## 🚀 Features
 

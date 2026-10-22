@@ -41,24 +41,36 @@
         </div>
       </div>
 
-      <!-- Assignment / Week Switcher -->
-      <div class="assignment-picker">
-        <label for="assignmentSelect" class="assignment-label">Module / Week:</label>
-        <select id="assignmentSelect" class="assignment-dropdown" aria-label="Select Assignment Week">
-          <option value="week1">Week 01 : Assignment 01</option>
-          <option value="week2">Week 02 : Assignment 02</option>
-          <option value="week3">Week 03 : Assignment 03</option>
-          <option value="week4">Week 04 : Assignment 04</option>
-          <option value="week5">Week 05 : Assignment 05</option>
-          <option value="week6">Week 06 : Assignment 06</option>
-          <option value="week7">Week 07 : Assignment 07</option>
-          <option value="week8">Week 08 : Assignment 08</option>
-          <option value="week9">Week 09 : Assignment 09</option>
-          <option value="week10">Week 10 : Assignment 10</option>
-          <option value="week11">Week 11 : Assignment 11</option>
-          <option value="week12">Week 12 : Assignment 12</option>
-          <option value="all_mixed">⚡ All Weeks Mixed : Complete Mock (180 MCQs)</option>
-        </select>
+      <!-- Pickers Group: Course & Assignment -->
+      <div class="header-pickers">
+        <!-- Course Switcher -->
+        <div class="course-picker">
+          <label for="courseSelect" class="assignment-label">Course:</label>
+          <select id="courseSelect" class="assignment-dropdown" aria-label="Select NPTEL Course">
+            <option value="iot4">🌐 Industry 4.0 & Industrial IoT</option>
+            <option value="hci">🖥️ Human-Computer Interfaces (HCI)</option>
+          </select>
+        </div>
+
+        <!-- Assignment / Week Switcher -->
+        <div class="assignment-picker">
+          <label for="assignmentSelect" class="assignment-label">Module / Week:</label>
+          <select id="assignmentSelect" class="assignment-dropdown" aria-label="Select Assignment Week">
+            <option value="week1">Week 01 : Assignment 01</option>
+            <option value="week2">Week 02 : Assignment 02</option>
+            <option value="week3">Week 03 : Assignment 03</option>
+            <option value="week4">Week 04 : Assignment 04</option>
+            <option value="week5">Week 05 : Assignment 05</option>
+            <option value="week6">Week 06 : Assignment 06</option>
+            <option value="week7">Week 07 : Assignment 07</option>
+            <option value="week8">Week 08 : Assignment 08</option>
+            <option value="week9">Week 09 : Assignment 09</option>
+            <option value="week10">Week 10 : Assignment 10</option>
+            <option value="week11">Week 11 : Assignment 11</option>
+            <option value="week12">Week 12 : Assignment 12</option>
+            <option value="all_mixed">⚡ All Weeks Mixed : Complete Mock (180 MCQs)</option>
+          </select>
+        </div>
       </div>
 
       <div class="header-actions">
@@ -284,8 +296,8 @@
   </div>
 
   <!-- Scripts with cache busting -->
-  <script src="questions.js?v=2.5"></script>
-  <script src="app.js?v=2.5"></script>
+  <script src="questions.js?v=3.0"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 
 </html>

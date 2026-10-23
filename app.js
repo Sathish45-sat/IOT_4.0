@@ -3,8 +3,19 @@
  * Pure Vanilla JavaScript - No dependencies required
  */
 
-// Application State
-const savedCourseKey = localStorage.getItem('nptel_course') || 'iot4';
+// Application State & URL Parameter Support
+const urlParams = new URLSearchParams(window.location.search);
+const urlCourse = urlParams.get('course');
+let defaultCourse = 'iot4';
+if (urlCourse && typeof coursesData !== 'undefined' && coursesData[urlCourse]) {
+  defaultCourse = urlCourse;
+} else {
+  const stored = localStorage.getItem('nptel_course');
+  if (stored && typeof coursesData !== 'undefined' && coursesData[stored]) {
+    defaultCourse = stored;
+  }
+}
+const savedCourseKey = defaultCourse;
 const initialCourse = (typeof coursesData !== 'undefined' && coursesData[savedCourseKey])
   ? coursesData[savedCourseKey]
   : ((typeof coursesData !== 'undefined' && coursesData.iot4) ? coursesData.iot4 : null);
@@ -558,12 +569,27 @@ function getActiveAssignments() {
   return {};
 }
 
+// Update Course Tabs UI
+function updateCourseTabsUI(courseKey) {
+  const tabs = document.querySelectorAll('.course-tab-pill');
+  tabs.forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.course === courseKey);
+  });
+}
+
 // Switch Course
 function switchCourse(courseKey) {
   if (typeof coursesData === 'undefined' || !coursesData[courseKey]) return;
   sfx.playClick();
   state.currentCourseKey = courseKey;
   localStorage.setItem('nptel_course', courseKey);
+
+  // Sync URL parameter without reload
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set('course', courseKey);
+    window.history.replaceState(null, '', url.toString());
+  } catch (e) {}
 
   const course = coursesData[courseKey];
   const assignments = course.assignments;
@@ -573,6 +599,7 @@ function switchCourse(courseKey) {
     elements.courseSelect.value = courseKey;
   }
 
+  updateCourseTabsUI(courseKey);
   populateAssignmentDropdown();
   switchAssignment(firstKey);
 }
@@ -758,6 +785,17 @@ function setupEventListeners() {
     });
   });
 
+  // Course Tab Pills Click Listeners
+  const coursePills = document.querySelectorAll('.course-tab-pill');
+  coursePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const c = pill.dataset.course;
+      if (c && c !== state.currentCourseKey) {
+        switchCourse(c);
+      }
+    });
+  });
+
   window.addEventListener('keydown', handleKeyDown);
 }
 
@@ -767,6 +805,7 @@ function init() {
   if (elements.courseSelect) {
     elements.courseSelect.value = state.currentCourseKey;
   }
+  updateCourseTabsUI(state.currentCourseKey);
   populateAssignmentDropdown();
   const course = getActiveCourse();
   const assignments = getActiveAssignments();

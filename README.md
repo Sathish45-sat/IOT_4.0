@@ -9,6 +9,9 @@ An interactive, responsive, frontend-only practice website for NPTEL Online Cert
 2. **Design & Implementation of Human-Computer Interfaces (HCI - IIT Guwahati)**
    - 12 Weeks / Assignments (120 MCQs total)
    - ⚡ All Weeks Mixed : Complete Mock (120 MCQs)
+3. **Privacy and Security in Online Social Media (PSOSM - IIIT Hyderabad)**
+   - 11 Weeks / Assignments (110 MCQs total)
+   - ⚡ All Weeks Mixed : Complete Mock (110 MCQs)
 
 ## 🚀 Features
 

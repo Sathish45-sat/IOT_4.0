@@ -2,6 +2,7 @@
  * NPTEL Practice Question Bank
  * Course 1: Introduction to Industry 4.0 and Industrial Internet of Things (180 MCQs)
  * Course 2: Design & Implementation of Human-Computer Interfaces (120 MCQs)
+ * Course 3: Privacy and Security in Online Social Media (110 MCQs)
  */
 const coursesData = {
   "iot4": {
@@ -3728,10 +3729,1415 @@ const coursesData = {
         ]
       }
     }
+  },
+  "psosm": {
+    "id": "psosm",
+    "title": "Privacy and Security in Online Social Media",
+    "shortTitle": "Social Media Privacy & Security (PSOSM)",
+    "topic": "OSN Privacy, Credibility & Network Security",
+    "assignments": {
+      "psosm_week1": {
+        "id": "psosm_week1",
+        "title": "Week 01 : Assignment 01",
+        "topic": "Git Version Control, Virtual Environments & OSN Concepts",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Which sequence correctly hosts a local Git repository on GitHub?",
+            "options": [
+              "git clone → git remote add → git status",
+              "git remote -v → git clone → git push",
+              "git remote add origin ... → git remote -v → git push origin master",
+              "git push origin master → git remote -v → git remote add origin ..."
+            ],
+            "correctIndex": 2,
+            "explanation": "To host an existing local git repo on GitHub, first add the remote URL using 'git remote add origin <url>', optionally verify it with 'git remote -v', and finally push the commits using 'git push origin master'."
+          },
+          {
+            "id": 2,
+            "question": "Which of the following statement(s) is/are true about Anonymous social networks?",
+            "options": [
+              "Anonymous social networks provide more freedom of expression.",
+              "Anonymous social networks help in providing enhanced privacy and anonymity.",
+              "Anonymous social networks reduce the fear of judgment or social consequences.",
+              "All of the above"
+            ],
+            "correctIndex": 3,
+            "explanation": "Anonymous social networks provide users with privacy/anonymity, foster open expression of sensitive thoughts, and reduce anxiety or fear of social backlash."
+          },
+          {
+            "id": 3,
+            "question": "Choose the correct option to create a virtual environment in Python:",
+            "options": [
+              "python3 venv -m <env_name>",
+              "python3 -m venv <env_name>",
+              "virtualpython3 -m venv <env_name>",
+              "virtualenv python3 -m venv myenv"
+            ],
+            "correctIndex": 1,
+            "explanation": "The standard Python 3 command to create a lightweight virtual environment is 'python3 -m venv <env_name>'."
+          },
+          {
+            "id": 4,
+            "question": "Why is it important to create a virtual environment in Python?",
+            "options": [
+              "Creating a virtual environment optimises memory usage in Python applications.",
+              "Creating a virtual environment to ensure compatibility with different operating systems.",
+              "Creating a virtual environment enhances the performance of Python programs.",
+              "Creating a virtual environment isolates project dependencies and prevents conflicts between different projects."
+            ],
+            "correctIndex": 3,
+            "explanation": "Python virtual environments keep packages and dependencies isolated per-project, preventing version conflicts with system packages or other projects."
+          },
+          {
+            "id": 5,
+            "question": "Fill in the correct option to stage files/directories in Git lifecycle:",
+            "options": [
+              "Modified, tracked",
+              "Unmodified, modified",
+              "modified, unstaged",
+              "Modified, Unmodified"
+            ],
+            "correctIndex": 1,
+            "explanation": "In Git file status lifecycle, files move between Untracked, Unmodified, Modified, and Staged."
+          },
+          {
+            "id": 6,
+            "question": "Which command lists all the remote addresses associated with a local repository?",
+            "options": [
+              "git checkout",
+              "git remote -v",
+              "git stash",
+              "git pull origin master"
+            ],
+            "correctIndex": 1,
+            "explanation": "'git remote -v' displays the names and URLs of all configured remote repositories for fetching and pushing."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following concepts is closely related to the fact that infrequent, arms-length relationships are more beneficial for employment opportunities, promotions, and wages than strong ties?",
+            "options": [
+              "Six degrees of separation",
+              "Strength of weak ties",
+              "Small world phenomenon",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Mark Granovetter's seminal theory 'The Strength of Weak Ties' showed that acquaintances (weak ties) provide novel information and diverse job opportunities compared to close friends."
+          },
+          {
+            "id": 8,
+            "question": "Which of the following is/are shortcomings of online social media platforms?",
+            "options": [
+              "Spread of misinformation and fake news",
+              "Cyberbullying and online harassment",
+              "Addiction and excessive time consumption",
+              "All of the above"
+            ],
+            "correctIndex": 3,
+            "explanation": "Online social networks suffer from multiple shortcomings including misinformation virality, cyberbullying, addictive algorithmic feedback loops, and limited control over privacy."
+          },
+          {
+            "id": 9,
+            "question": "When a piece of content, such as a video, meme, or news article, gains attention on social media platforms, it can quickly reach a large audience within a short period. Which 'V' of big/social data does it refer to?",
+            "options": [
+              "Veracity",
+              "Volume",
+              "Value",
+              "Velocity"
+            ],
+            "correctIndex": 3,
+            "explanation": "Velocity refers to the speed of content generation, diffusion, and rapid viral dissemination across platforms."
+          },
+          {
+            "id": 10,
+            "question": "What is the primary purpose of the Gab platform as discussed in the lectures?",
+            "options": [
+              "Support for professional networking",
+              "To facilitate online shopping experience",
+              "It provides educational resources",
+              "To promote free speech"
+            ],
+            "correctIndex": 3,
+            "explanation": "Gab was founded as an alternative social network with a primary mission focused on unrestricted free speech and minimal moderation."
+          }
+        ]
+      },
+      "psosm_week2": {
+        "id": "psosm_week2",
+        "title": "Week 02 : Assignment 02",
+        "topic": "Reddit API, Data Formats, LIWC & Graph API",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What is the primary data format utilized by the Reddit API when returning information?",
+            "options": [
+              "HTML",
+              "XML",
+              "CSV",
+              "JSON"
+            ],
+            "correctIndex": 3,
+            "explanation": "The Reddit API returns structured payload data primarily in JSON (JavaScript Object Notation) format."
+          },
+          {
+            "id": 2,
+            "question": "JSON stands for:",
+            "options": [
+              "JavaScript Oriented Namespace",
+              "JavaScript Object Network",
+              "JavaScript Object Notation",
+              "JavaScript Oriented Notation"
+            ],
+            "correctIndex": 2,
+            "explanation": "JSON stands for JavaScript Object Notation, a lightweight data-interchange format."
+          },
+          {
+            "id": 3,
+            "question": "Suppose you want to retrieve the top 5 hottest posts from the subreddit 'r/technology' using the Reddit API. Which Python library would you most likely use to achieve this?",
+            "options": [
+              "Urllib",
+              "PRAW",
+              "JSON",
+              "Requests"
+            ],
+            "correctIndex": 1,
+            "explanation": "PRAW (Python Reddit API Wrapper) is the official/standard Python wrapper library for interacting with the Reddit API."
+          },
+          {
+            "id": 4,
+            "question": "You want to fetch the details of 10 hot posts from the subreddit 'r/worldnews' using the Reddit API in Python. Which is the correct code snippet?",
+            "options": [
+              "import requests\nposts = requests.get('https://reddit.com/r/worldnews/new.json', limit=10)\nfor post in posts:\n    print(post.title)",
+              "import praw\nreddit = praw.Reddit(client_id='MY_CLIENT_ID', client_secret='MY_CLIENT_SECRET', user_agent='MY_USER_AGENT')\nposts = reddit.subreddit('worldnews').new(limit=10)\nfor post in posts:\n    print(post.title)",
+              "import praw\nreddit = praw.Reddit(client_id='MY_CLIENT_ID', client_secret='MY_CLIENT_SECRET', user_agent='MY_USER_AGENT')\nposts = reddit.subreddit('worldnews').hot(limit=10)\nfor post in posts:\n    print(post.title)",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "In PRAW, calling 'reddit.subreddit('worldnews').hot(limit=10)' specifically retrieves the top 10 hot posts."
+          },
+          {
+            "id": 5,
+            "question": "Which of the following tweet content features falls in the category of linguistic features?",
+            "options": [
+              "Number of retweets",
+              "Number of followers",
+              "Presence of smileys only",
+              "Presence of negative emotion words and pronouns"
+            ],
+            "correctIndex": 3,
+            "explanation": "Linguistic features (often extracted via LIWC) analyze text composition such as negative emotion words, affective processes, pronouns, and syntax."
+          },
+          {
+            "id": 6,
+            "question": "Why do we do network analysis on social media platforms?",
+            "options": [
+              "To identify and analyze patterns of diseases spreading within a population.",
+              "To study the behavior of network protocols and optimize their efficiency.",
+              "To analyze the performance of computer networks and improve data transmission speeds.",
+              "To understand the social structures and relationships between individuals or entities in a network."
+            ],
+            "correctIndex": 3,
+            "explanation": "Social network analysis examines graph structures, ties, communities, centralities, and behavioral dynamics among online users and entities."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following is a recent example of misinformation spread on social media platforms?",
+            "options": [
+              "Instagram story containing accurate information about a recent political development with credible sources cited.",
+              "Facebook post sharing information from a well-known health organization about the effectiveness of vaccination.",
+              "YouTube video providing a detailed explanation of climate change supported by scientific evidence.",
+              "Tweet claiming that a particular brand of COVID-19 vaccine causes severe side effects, with no evidence to support the claim."
+            ],
+            "correctIndex": 3,
+            "explanation": "Unsubstantiated vaccine side effect claims circulating without scientific backing represent classic social media health misinformation."
+          },
+          {
+            "id": 8,
+            "question": "Given a MongoDB collection named 'employees', what MongoDB query would you use to retrieve all employees with a salary greater than or equal to 60000?",
+            "options": [
+              "db.employees.find({ \"salary\": { $lt: 60000 } })",
+              "db.employees.find({ \"salary\": { $gte: 60000 } })",
+              "db.employees.find({ \"salary\": { $lte: 60000 } })",
+              "db.employees.find({ \"salary\": { $gt: 60000 } })"
+            ],
+            "correctIndex": 1,
+            "explanation": "In MongoDB query operators, '$gte' stands for greater than or equal to."
+          },
+          {
+            "id": 9,
+            "question": "You want to retrieve the 5 most recent posts made by a specific user with the user ID '12345'. Which SQL query would you use?",
+            "options": [
+              "SELECT * FROM posts WHERE user_id = 12345 ORDER BY post_id ASC LIMIT 5;",
+              "SELECT * FROM posts WHERE user_id = 12345 ORDER BY post_date ASC LIMIT 5;",
+              "SELECT * FROM posts WHERE user_id = 12345 ORDER BY post_id DESC LIMIT 5;",
+              "SELECT * FROM posts WHERE user_id = 12345 ORDER BY post_date DESC LIMIT 5;"
+            ],
+            "correctIndex": 3,
+            "explanation": "Ordering by 'post_date DESC' sorts the records newest first, and 'LIMIT 5' restricts the result to the 5 most recent posts."
+          },
+          {
+            "id": 10,
+            "question": "What is the Facebook Graph API as discussed in the lecture?",
+            "options": [
+              "An API that provides access only to a user's Facebook friends list.",
+              "An API that enables developers to integrate Facebook login into their applications for user authentication only.",
+              "An API that allows developers to create and manage Facebook pages only.",
+              "An API that provides access to a wide range of user data, interactions, and connections on Facebook."
+            ],
+            "correctIndex": 3,
+            "explanation": "The Graph API is the primary way for apps to read and write to Facebook's social graph (nodes like users, photos, pages, and edges like comments, tags, and friendships)."
+          }
+        ]
+      },
+      "psosm_week3": {
+        "id": "psosm_week3",
+        "title": "Week 03 : Assignment 03",
+        "topic": "Privacy Attitudes, TweetCred, Likert Scale & NDCG",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Consider the statement: 'To this segment, consumer privacy is very important; they feel that they have been victims of privacy invasions, they are pessimistic about the future of privacy protection, and about a third of them favour creating a general federal regulatory agency on consumer privacy.' To which of the three Westin Privacy categories does 'they' in the sentence most likely belong?",
+            "options": [
+              "Unconcerned",
+              "Pragmatists",
+              "Fundamentalists",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "According to Alan Westin's privacy segmentation, Privacy Fundamentalists have the highest concern for privacy, feel strongly victimized by privacy intrusions, and favor strict regulations."
+          },
+          {
+            "id": 2,
+            "question": "Which of the following feature categories are used by the credibility model TweetCred?",
+            "options": [
+              "Tweet network only",
+              "Tweet links and Tweet metadata only",
+              "All of the above (Tweet links, Tweet Author, Tweet network, Tweet metadata)",
+              "Tweet Author only"
+            ],
+            "correctIndex": 2,
+            "explanation": "TweetCred incorporates content-based features (links, text, sentiment), user/author features (verification, age, followers), network features (retweet graph), and tweet metadata."
+          },
+          {
+            "id": 3,
+            "question": "Cronbach’s alpha is used to:",
+            "options": [
+              "determine the statistical significance of a research study.",
+              "analyze the effect size of an intervention.",
+              "calculate the standard deviation of a sample population.",
+              "assess the reliability and internal consistency of a questionnaire."
+            ],
+            "correctIndex": 3,
+            "explanation": "Cronbach's alpha is a measure of internal consistency, evaluating how closely related a set of survey/scale items are as a group."
+          },
+          {
+            "id": 4,
+            "question": "Suppose we have five tweets (TW1, TW2, TW3, TW4, and TW5) with their relevances based on user feedback. What is NDCG@5 for this ranked list of tweets as calculated in lecture?",
+            "options": [
+              "0.513",
+              "0.5",
+              "0.975",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Normalized Discounted Cumulative Gain at rank 5 (NDCG@5) evaluates ranking quality; for the lecture dataset the calculated score is 0.975."
+          },
+          {
+            "id": 5,
+            "question": "How many participants have changed their default settings on their social network? (Based on the report 'Privacy in India: Attitudes and Awareness V 2.0')",
+            "options": [
+              "25%",
+              "50%",
+              "60%",
+              "75%"
+            ],
+            "correctIndex": 1,
+            "explanation": "In the study 'Privacy in India: Attitudes and Awareness V 2.0', exactly 50% of the surveyed participants reported changing their default privacy settings."
+          },
+          {
+            "id": 6,
+            "question": "What is the primary purpose of a Focus Group Discussion (FGD) in social media privacy studies?",
+            "options": [
+              "To collect quantitative data through surveys and questionnaires.",
+              "To facilitate group discussions and gather qualitative insights.",
+              "To conduct one-on-one interviews with participants.",
+              "To observe participants' behaviours in a controlled environment."
+            ],
+            "correctIndex": 1,
+            "explanation": "FGDs are a qualitative research method where guided group interactions uncover deep attitudes, perceptions, and nuanced reasoning."
+          },
+          {
+            "id": 7,
+            "question": "In response to 'When you hear the word privacy, what comes to mind?', which was the most common respondent answer according to the 'Privacy in India' report?",
+            "options": [
+              "Territorial privacy",
+              "Bodily privacy",
+              "Information Privacy",
+              "Communication privacy"
+            ],
+            "correctIndex": 2,
+            "explanation": "Information Privacy (protection of personal data, account credentials, and digital footprint) was the most frequent association with privacy."
+          },
+          {
+            "id": 8,
+            "question": "Consider the response-time distribution graph for the TweetCred system. Which of the following is the correct inference?",
+            "options": [
+              "For 99% of the users, the response time was less than 6 seconds, and for 100%, the response time was under 10 seconds.",
+              "For 82% of the users, the response time was less than 6 seconds, and for 99%, the response time was under 10 seconds.",
+              "For 82% of the users, the response time was less than 2 seconds, and for 99%, the response time was under 10 seconds.",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Performance benchmarks for the real-time TweetCred scoring engine showed 82% of requests completed under 6s and 99% under 10s."
+          },
+          {
+            "id": 9,
+            "question": "What is a Likert scale?",
+            "options": [
+              "An algorithm that gives credibility scores for real-time tweets",
+              "A statistical metric for inter-annotator agreement",
+              "A rating scale commonly used in surveys and questionnaires to measure attitudes or opinions",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "A Likert scale is a psychometric scale where respondents specify their level of agreement to a statement typically ranging from Strongly Disagree to Strongly Agree."
+          },
+          {
+            "id": 10,
+            "question": "TweetCred is:",
+            "options": [
+              "a real-time app-based system to automatically assess the quality of content on Twitter.",
+              "a real-time app-based system to automatically evaluate the score of tweets on Twitter.",
+              "a real-time web-based system to automatically evaluate the credibility of content on Twitter.",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "TweetCred is a semi-supervised real-time web browser extension/system developed to evaluate the credibility of information on Twitter."
+          }
+        ]
+      },
+      "psosm_week4": {
+        "id": "psosm_week4",
+        "title": "Week 04 : Assignment 04",
+        "topic": "k-Anonymity, Sweeney's Research & NumPy Operations",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What is the critical challenge that Latanya Sweeney's research on k-anonymity addresses?",
+            "options": [
+              "Make datasets larger for analysis",
+              "Eliminate all data from datasets",
+              "Anonymise data without losing utility",
+              "Ignore research utility for better privacy"
+            ],
+            "correctIndex": 2,
+            "explanation": "Latanya Sweeney's work formulated k-anonymity to address the fundamental trade-off: protecting individual privacy against re-identification while preserving analytic data utility."
+          },
+          {
+            "id": 2,
+            "question": "Which Python data structure can significantly enhance the efficiency and simplicity of numerical calculations?",
+            "options": [
+              "Python variables",
+              "Python numpy array",
+              "Python numpy list",
+              "None of these"
+            ],
+            "correctIndex": 1,
+            "explanation": "NumPy arrays (ndarray) provide vectorized contiguous memory operations that are substantially faster and more memory-efficient than standard Python lists."
+          },
+          {
+            "id": 3,
+            "question": "Fill in the correct function calculate_total_sales(sales_list) which calculates total sales using NumPy:",
+            "options": [
+              "sales_array = np.list(sales_list)\ntotal_sales = np.sum(sales_array)",
+              "sales_array = np.array(sales_list)\ntotal_sales = sales_array.total()",
+              "sales_array = np.array(sales_list)\ntotal_sales = np.sum(sales_array)",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "In NumPy, 'np.array(sales_list)' converts a list to an array, and 'np.sum(sales_array)' calculates the sum."
+          },
+          {
+            "id": 4,
+            "question": "Fill in the correct function calculate_maximum_sales(sales_list) which calculates maximum sales using NumPy:",
+            "options": [
+              "sales_array = np.list(sales_list)\nmax_sales = np.max(sales_array)",
+              "sales_array = np.array(sales_list)\nmax_sales = sales_array.maximum()",
+              "sales_array = np.array(sales_list)\nmax_sales = np.max(sales_array)",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "'np.max(sales_array)' computes the maximum element along the array."
+          },
+          {
+            "id": 5,
+            "question": "Given expenses_array with 12 monthly expenses (Jan=0 to Dec=11), how would you extract expenses for the second half of the year (July to December)?",
+            "options": [
+              "second_half_expenses = expenses_array[7:]",
+              "second_half_expenses = expenses_array[5:]",
+              "second_half_expenses = expenses_array[6:]",
+              "second_half_expenses = expenses_array[:12]"
+            ],
+            "correctIndex": 2,
+            "explanation": "Python arrays are 0-indexed. Months 0-5 are Jan-June (first half); index 6 to the end corresponds to July-December (second half)."
+          },
+          {
+            "id": 6,
+            "question": "Identify the 1-indexed months where expenses exceeded $1600 in expenses_array:",
+            "options": [
+              "high_expense_months = np.where(expenses_array > 1600))",
+              "high_expense_months = np.where(expenses_array > 1600)[0] + 1",
+              "high_expense_months = np.where(expenses_array < 1600)[0]",
+              "high_expense_months = np.where(expenses_array > 1600)[0]"
+            ],
+            "correctIndex": 1,
+            "explanation": "np.where returns 0-based indices. Adding +1 converts them to human 1-indexed months (1 = Jan, 12 = Dec)."
+          },
+          {
+            "id": 7,
+            "question": "Calculate the average expenses for the first quarter of the year (months 1-3):",
+            "options": [
+              "first_quarter_average = np.mean(expenses_array[:6])",
+              "first_quarter_average = np.mean(expenses_array[:3])",
+              "first_quarter_average = np.mean(expenses_array[:2])",
+              "first_quarter_average = np.mean(expenses_array[:4])"
+            ],
+            "correctIndex": 1,
+            "explanation": "The first quarter comprises indices 0, 1, 2 (Jan, Feb, Mar). Slice 'expenses_array[:3]' captures these three elements."
+          },
+          {
+            "id": 8,
+            "question": "Choose the correct option for 'result' in the Pandas groupby aggregation assignment question:",
+            "options": [
+              "Option 2 with missing reset_index",
+              "None of the above",
+              "Option 1 with incorrect column names",
+              "Option 3 with incorrect syntax"
+            ],
+            "correctIndex": 1,
+            "explanation": "None of the provided options correctly matched the exact DataFrame output structure in the lecture assignment."
+          },
+          {
+            "id": 9,
+            "question": "What is the primary goal of k-anonymity in data privacy?",
+            "options": [
+              "Ensure that every attribute in the dataset is unique.",
+              "Making it difficult to link specific individuals to their records in a released dataset.",
+              "Minimize the amount of data collected.",
+              "Prevent unauthorised access to the dataset."
+            ],
+            "correctIndex": 1,
+            "explanation": "k-Anonymity guarantees that each record is indistinguishable from at least k-1 other records with respect to quasi-identifiers."
+          },
+          {
+            "id": 10,
+            "question": "What will be the output of the standard Matplotlib sine code: x = np.linspace(0, 2*np.pi, 100); y = np.sin(x); plt.plot(x, y); plt.show()?",
+            "options": [
+              "Logical error in code",
+              "A plot consisting of cosine wave",
+              "A plot consisting of sine wave",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Evaluating y = np.sin(x) over [0, 2π] creates and plots a standard continuous sine waveform."
+          }
+        ]
+      },
+      "psosm_week5": {
+        "id": "psosm_week5",
+        "title": "Week 05 : Assignment 05",
+        "topic": "Police-Public OSN Communication, LIWC & Sentiment Analysis",
+        "questions": [
+          {
+            "id": 1,
+            "question": "How do Online Social Networks improve public communication between police and residents?",
+            "options": [
+              "Understand fear and victimisation effects only",
+              "Provide actionable information and collective action only",
+              "Provide mutual accountability only",
+              "All of the above (actionable info, mutual accountability, understanding fear/victimization, contacting authorities)"
+            ],
+            "correctIndex": 3,
+            "explanation": "OSNs provide real-time incident reporting, direct accountability, channels for residents to voice safety concerns, and rapid two-way communication."
+          },
+          {
+            "id": 2,
+            "question": "Which of the following are examples of actionable information shared on social media?",
+            "options": [
+              "OSN post sharing about Azaadi ka Amrit Mahotsav celebrations in the locality",
+              "OSN post regarding traffic issues on the road only",
+              "Both OSN post regarding traffic issues and open potholes on the road",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Actionable information allows authorities or residents to take concrete remedial steps (e.g., rerouting traffic, filling dangerous potholes)."
+          },
+          {
+            "id": 3,
+            "question": "When a citizen post contains exact geographical coordinates or location names (e.g. 'MG Road near junction 4'), what type of actionable information is highlighted?",
+            "options": [
+              "Linguistic data",
+              "Temporal data",
+              "Spatial data",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Geographic coordinates, addresses, and street locations constitute spatial data."
+          },
+          {
+            "id": 4,
+            "question": "In public authority and citizen communication on OSNs, what two primary styles of communication were identified and compared in lectures?",
+            "options": [
+              "Informal and Informal",
+              "Official and Classified",
+              "Formal and Formal",
+              "Formal and Informal"
+            ],
+            "correctIndex": 3,
+            "explanation": "The lecture contrasted formal (structured, authoritative press-release tone) and informal (conversational, empathetic, colloquial citizen-facing) communication."
+          },
+          {
+            "id": 5,
+            "question": "Which text analysis tool is widely used to identify emotional, cognitive, and psychological states based on written text?",
+            "options": [
+              "N-gram analysis",
+              "K-means clustering",
+              "LIWC (Linguistic Inquiry and Word Count)",
+              "All of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "LIWC (Linguistic Inquiry and Word Count) is a specialized psycholinguistic lexicon tool that maps words to psychological categories and emotional states."
+          },
+          {
+            "id": 6,
+            "question": "Consider the sentence: 'ISRO launched Chandrayaan and conducted experiments on thermophysical properties and environment'. What is the thematic content and subject matter being discussed?",
+            "options": [
+              "The grammatical structure of the sentence.",
+              "The linguistic diversity of the sentence.",
+              "The activities and research conducted by ISRO.",
+              "The emotional tone is conveyed in the sentence."
+            ],
+            "correctIndex": 2,
+            "explanation": "Thematic analysis extracts the core subject matter of the text: ISRO's scientific missions and lunar experiments."
+          },
+          {
+            "id": 7,
+            "question": "What does 'n' represent in the n-gram analysis of a sentence?",
+            "options": [
+              "The number of characters in each n-gram",
+              "The number of words in each n-gram sequence",
+              "The number of different languages in the sentence",
+              "The number of emotions in the analysis"
+            ],
+            "correctIndex": 1,
+            "explanation": "In n-gram computational linguistics, 'n' refers to the number of contiguous tokens or words (e.g., 1=unigram, 2=bigram, 3=trigram)."
+          },
+          {
+            "id": 8,
+            "question": "A sentiment analysis study analyses a text passage for valence and arousal values on a scale of -1 to 1. The valence score is 0.75 and arousal score is 0.85. What do these values suggest about the emotional characteristics?",
+            "options": [
+              "Positive sentiment, low emotional intensity",
+              "Positive sentiment, high emotional intensity",
+              "Negative sentiment, low emotional intensity",
+              "Negative sentiment, high emotional intensity"
+            ],
+            "correctIndex": 1,
+            "explanation": "In the circumplex model of affect, positive valence (> 0) indicates pleasantness/positive sentiment, and high arousal (> 0.5) indicates high energy or emotional intensity."
+          },
+          {
+            "id": 9,
+            "question": "A social media analyst evaluates engagement metrics (likes, comments, shares) across three posts. Which post shows the highest variability in engagement characteristics?",
+            "options": [
+              "Post 2",
+              "Post 1",
+              "All posts show similar variability.",
+              "Post 3"
+            ],
+            "correctIndex": 1,
+            "explanation": "Post 1 exhibits the highest standard deviation / variance across its engagement metrics, indicating greatest variability."
+          },
+          {
+            "id": 10,
+            "question": "What kind of post and sentiment is depicted in: 'Absolutely disgusted by the state of our local park! It's been months since we reported the broken playground equipment, and nothing has been done. Our kids deserve better!'?",
+            "options": [
+              "Citizen-initiated and positive",
+              "Public authority-initiated and positive",
+              "Citizen-initiated and negative",
+              "Public authority-initiated and negative"
+            ],
+            "correctIndex": 2,
+            "explanation": "The complaint originates from a local resident (citizen-initiated) and conveys anger/frustration ('disgusted', 'broken') which is strongly negative sentiment."
+          }
+        ]
+      },
+      "psosm_week6": {
+        "id": "psosm_week6",
+        "title": "Week 06 : Assignment 06",
+        "topic": "Centrality Measures, Link Farming & Spam Detection",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Consider a symmetric diamond or ring social network scenario for nodes A, B, C, and D. Which individual has the highest betweenness centrality?",
+            "options": [
+              "A",
+              "C",
+              "All of them have the same betweenness centrality",
+              "B"
+            ],
+            "correctIndex": 2,
+            "explanation": "In fully symmetric networks where each node bridges an identical proportion of shortest paths, betweenness centrality scores are equal across nodes."
+          },
+          {
+            "id": 2,
+            "question": "What does indegree centrality measure in social media and network analysis?",
+            "options": [
+              "The number of outgoing connections a user has with other users.",
+              "A user's popularity based on their followers or incoming connections.",
+              "The diversity of content shared by a user.",
+              "The level of activity a user has on the platform."
+            ],
+            "correctIndex": 1,
+            "explanation": "In directed graphs (like Twitter), in-degree corresponds to directed edges pointing to the node (followers), measuring prominence and popularity."
+          },
+          {
+            "id": 3,
+            "question": "What does betweenness centrality depict about a node in a network?",
+            "options": [
+              "Who is close to everyone in terms of average geodesic distance",
+              "One who acts as a critical bridge and is quickly approachable along shortest paths",
+              "One who is purely most influential by raw follower count",
+              "All of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Betweenness centrality measures how often a node lies on the shortest path between other pairs of nodes, acting as a broker or gateway."
+          },
+          {
+            "id": 4,
+            "question": "What is link farming on online platforms?",
+            "options": [
+              "A strategy for developing social connections by attending networking events.",
+              "Agricultural practice that involves cultivating crops in a vertical arrangement.",
+              "Rapidly growing links on a website through unethical or manipulative means.",
+              "All of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Link farming refers to creating dense networks of mutual backlinks or mutual following collusion to artificially manipulate search engine rankings or network influence."
+          },
+          {
+            "id": 5,
+            "question": "Spamming the index of search engines through manipulative link farms and keyword stuffing is called:",
+            "options": [
+              "Phishing",
+              "Clickjacking",
+              "Spamdexing (also known as Spamexing)",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Spamdexing (search engine spamming / indexing spam) involves techniques like hidden text, scraper sites, and link farms to deceive search engine indexers."
+          },
+          {
+            "id": 6,
+            "question": "Which of the following is the best example of a clickbait headline?",
+            "options": [
+              "Annual Financial Report 2026",
+              "Python Programming Notes",
+              "You Won't Believe What Happened Next! Click Here to Claim Your Prize!",
+              "Meeting Agenda for Today"
+            ],
+            "correctIndex": 2,
+            "explanation": "Clickbait headlines use sensationalized curiosity gaps ('You Won't Believe...') and exaggerated emotional appeals to lure clicks."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following is considered as 'social etiquette' on online social networks such as Twitter?",
+            "options": [
+              "Saying 'Thank you' to any appreciation by an influential person",
+              "Comment on the post of an influential person",
+              "Giving likes to the post of an influential person",
+              "Following back"
+            ],
+            "correctIndex": 3,
+            "explanation": "'Follow back' (reciprocal following) is a common social etiquette convention exploited by link farmers."
+          },
+          {
+            "id": 8,
+            "question": "A psychological principle where individuals feel compelled to return favours and interactions they receive is called:",
+            "options": [
+              "Spamming",
+              "Link farming",
+              "Reciprocity",
+              "All of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Reciprocity is the social norm where responding positively to actions (such as follow-for-follow) is perceived as an obligation."
+          },
+          {
+            "id": 9,
+            "question": "Which of the following is/are graph centrality measures?",
+            "options": [
+              "Node degree only",
+              "All of the above (Eigen centrality, Node degree, Betweenness centrality, Closeness centrality)",
+              "Closeness centrality only",
+              "Betweenness centrality only"
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard graph centrality metrics include degree centrality, eigenvector centrality, closeness centrality, and betweenness centrality."
+          },
+          {
+            "id": 10,
+            "question": "In the lecture graph model on spam topology (containing target nodes, link farm nodes, and spammers), which nodes are spam targets?",
+            "options": [
+              "A only",
+              "B only",
+              "Both A and B",
+              "Node S"
+            ],
+            "correctIndex": 2,
+            "explanation": "In the studied architecture, nodes A and B serve as target nodes receiving artificially inflated links from the spam collusion farm."
+          }
+        ]
+      },
+      "psosm_week7": {
+        "id": "psosm_week7",
+        "title": "Week 07 : Assignment 07",
+        "topic": "Text Preprocessing, Phishing, Nudges & User Vulnerabilities",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Consider the statement: 'Hello everyone!!!, Are you enjoying psosm course --- and learning new skills.' Choose the correct code to convert it to an unpunctuated string:",
+            "options": [
+              "no_punct = my_str.split(punctuations)",
+              "no_punct = \"\"\nfor char in my_str:\n    if char in punctuations:\n        no_punct = no_punct + char",
+              "no_punct = \"\"\nfor char in my_str:\n    if char not in punctuations:\n        no_punct = no_punct + char",
+              "None of these"
+            ],
+            "correctIndex": 2,
+            "explanation": "Iterating through characters and appending only those that are not in the string.punctuation set produces an unpunctuated string."
+          },
+          {
+            "id": 2,
+            "question": "Consider a Python code sorting dictionary items with sorted(d.items(), key=lambda x: x[1], reverse=True). What is the output?",
+            "options": [
+              "This code is used to retrieve an ascending sorted list having two tuples.",
+              "This code retrieves two tuples in a sorted or unsorted manner.",
+              "This code is used to retrieve a descending sorted list having two tuples.",
+              "This code returns a logical error."
+            ],
+            "correctIndex": 2,
+            "explanation": "'reverse=True' sorts elements in descending order based on their value (x[1])."
+          },
+          {
+            "id": 3,
+            "question": "Which of the following is NOT a stopword in English NLP?",
+            "options": [
+              "again",
+              "further",
+              "while",
+              "apple"
+            ],
+            "correctIndex": 3,
+            "explanation": "'apple' is a concrete noun carrying high semantic weight, not a functional stopword like 'while', 'further', or 'again'."
+          },
+          {
+            "id": 4,
+            "question": "Which elements in a sample phishing email make it potentially dangerous, as discussed in the lecture?",
+            "options": [
+              "Urgency in subject only",
+              "Regrettable information in the body only",
+              "Potential phishing link along with body only",
+              "All of the above (urgency in subject, regrettable/fear-inducing body, suspicious link)"
+            ],
+            "correctIndex": 3,
+            "explanation": "Phishing emails exploit psychological triggers like urgency ('Account suspended in 24 hours!'), fear, and deceptive hyperlinks."
+          },
+          {
+            "id": 5,
+            "question": "Which of the following statements was observed regarding age and phishing vulnerability in the lecture study?",
+            "options": [
+              "Younger and older participants were equally vulnerable to phishing attacks.",
+              "Younger participants were more vulnerable to phishing attacks.",
+              "Older participants were more vulnerable to phishing attacks.",
+              "No one is vulnerable to phishing attacks."
+            ],
+            "correctIndex": 2,
+            "explanation": "Empirical findings showed older demographics were significantly more susceptible to deceptive phishing cues."
+          },
+          {
+            "id": 6,
+            "question": "In a scientific experiment, which group refers to manipulating the independent variable?",
+            "options": [
+              "Control group",
+              "Comparison group",
+              "Observational group",
+              "Experimental group"
+            ],
+            "correctIndex": 3,
+            "explanation": "The experimental group receives the treatment or manipulation of the independent variable, whereas the control group does not."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following is/are advantages of having well-designed privacy policies and privacy nudges?",
+            "options": [
+              "To help individuals avoid regrettable online disclosures only",
+              "To help users make informed decisions with the information presented to them only",
+              "Both to help users make informed decisions and avoid regrettable online disclosures",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Effective privacy interfaces empower informed consent and introduce friction to curb impulsive, regrettable disclosures."
+          },
+          {
+            "id": 8,
+            "question": "A social media disclosure interface shows profile pictures of audience members before publishing. Which nudge is this?",
+            "options": [
+              "Sentiment nudge",
+              "Picture nudge",
+              "Voice nudge",
+              "Timer nudge"
+            ],
+            "correctIndex": 1,
+            "explanation": "A picture nudge presents visual avatars/photos of the intended audience to make social presence salient."
+          },
+          {
+            "id": 9,
+            "question": "As discussed in the lecture, which of the following is NOT an established social media privacy nudge?",
+            "options": [
+              "Sentiment Nudge",
+              "Picture Nudge",
+              "Timer Nudge",
+              "Voice Nudge"
+            ],
+            "correctIndex": 3,
+            "explanation": "Wang et al. proposed Timer, Picture, and Sentiment nudges; 'Voice Nudge' was not one of the studied nudges."
+          },
+          {
+            "id": 10,
+            "question": "Which of the following network participants has the property of having both very high indegree and very high outdegree on online social media?",
+            "options": [
+              "Random social network users",
+              "Passive lurkers",
+              "Top Link farmers",
+              "Top Spammers"
+            ],
+            "correctIndex": 2,
+            "explanation": "Link farmers aggressively follow thousands of accounts (high out-degree) and accumulate reciprocal follow-backs (high in-degree)."
+          }
+        ]
+      },
+      "psosm_week8": {
+        "id": "psosm_week8",
+        "title": "Week 08 : Assignment 08",
+        "topic": "Profile Linking, Anonymity, Whisper & Scale-Free Networks",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What are the common approaches to cross-platform profile linking?",
+            "options": [
+              "Study and analyse common attributes (workplace, profile picture, name) only",
+              "All of the above (analyzing common attributes like profile photo, name, and checking identifiers like email and location)",
+              "Check important identifiers such as same emails and phone numbers only",
+              "Only looking at posting time behavior"
+            ],
+            "correctIndex": 1,
+            "explanation": "Profile linking combines syntactic name matching, biometric/image embeddings of profile photos, behavioral patterns, and shared contact identifiers."
+          },
+          {
+            "id": 2,
+            "question": "Which statements are true regarding username change behavior on social media platforms?",
+            "options": [
+              "S1, S2, and S4 are correct",
+              "Only S1 and S4 are correct",
+              "Only S1, S2, and S3 are correct",
+              "All S1, S2, S3, S4 are correct."
+            ],
+            "correctIndex": 3,
+            "explanation": "All four lecture statements regarding username volatility, tracking hurdles, temporal evolution, and identity consistency were demonstrated to be true."
+          },
+          {
+            "id": 3,
+            "question": "In the username change empirical graph presented in the lecture, which inference is correct?",
+            "options": [
+              "Around 35 percent of the users change their profile picture exactly 3 times.",
+              "Around 50-55 per cent of users have changed their descriptions thrice.",
+              "Around 35 per cent of the users change their profile picture at least 3 times.",
+              "Around 60-70 percent of the users change their usernames at least once."
+            ],
+            "correctIndex": 2,
+            "explanation": "The cumulative distribution shows roughly 35% of observed users updated their profile image 3 or more times."
+          },
+          {
+            "id": 4,
+            "question": "Why do Whisper (anonymous social app) users have a very low clustering coefficient across their interaction network?",
+            "options": [
+              "Users interact with a large sample of close friends",
+              "Whisper users are likely to interact with complete strangers who are highly unlikely to interact with each other.",
+              "New users make 20% of the contribution in the whisper content.",
+              "All of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Low clustering means your neighbors are not connected to each other; Whisper connects transient strangers without persistent social circles."
+          },
+          {
+            "id": 5,
+            "question": "What is the primary purpose of Gephi software?",
+            "options": [
+              "3D Modeling",
+              "Music Composition",
+              "Video Editing",
+              "Network Visualization and Analysis"
+            ],
+            "correctIndex": 3,
+            "explanation": "Gephi is the premier open-source visualization and exploration software for graphs, complex systems, and social network analysis."
+          },
+          {
+            "id": 6,
+            "question": "Why is studying username change behavior useful for social media researchers?",
+            "options": [
+              "The number of characters and length of the username is restricted only",
+              "This is one of the unique attributes of the user only",
+              "All of the above (unique identifier, length restrictions, public visibility, tracking persistence)",
+              "It is a publicly available attribute only"
+            ],
+            "correctIndex": 2,
+            "explanation": "Usernames are public, unique within a namespace, structured, and crucial for studying handle squatting, identity persistence, and re-identification."
+          },
+          {
+            "id": 7,
+            "question": "In the directed network graph of Twitter, where nodes represent users, what does the in-degree of a node correspond to?",
+            "options": [
+              "Both followers and following",
+              "Number of followers on Twitter",
+              "Number of people you follow (following)",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "An incoming directed edge represents a follower pointing to the followed account."
+          },
+          {
+            "id": 8,
+            "question": "Which of the following platforms are recognized examples of anonymous or pseudonymous social networks?",
+            "options": [
+              "Secret and 4chan only",
+              "LinkedIn and Facebook",
+              "Yik Yak and Blind only",
+              "All of the above (Secret, 4chan, Yik Yak, Blind)"
+            ],
+            "correctIndex": 3,
+            "explanation": "Secret, 4chan, Yik Yak, and Blind all enable anonymous/pseudonymous posting without public personal identity linkage."
+          },
+          {
+            "id": 9,
+            "question": "A scale-free network is characterized by having:",
+            "options": [
+              "Power law degree distribution only",
+              "Pareto principle only",
+              "Zipf’s law only",
+              "All of the above (Power law degree distribution, Zipf’s law, Pareto principle)"
+            ],
+            "correctIndex": 3,
+            "explanation": "Scale-free networks follow heavy-tailed power-law distributions (P(k) ~ k^(-γ)), intimately tied to Zipf's law and Pareto's 80/20 rule."
+          },
+          {
+            "id": 10,
+            "question": "In the classmate friend count survey, the class average friend count was much higher than most individuals' actual count. Why did this occur?",
+            "options": [
+              "There is an error in individual calculations. It is impossible to have 300 friends on average if many have fewer.",
+              "Most of the individuals have reported it wrong in the report.",
+              "Few individuals have exceptionally high friend counts (outliers) that skew the average upward.",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "This is the 'Friendship Paradox' caused by heavy-tailed degree distributions where a few massive hubs (super-popular users) drastically pull up the mean."
+          }
+        ]
+      },
+      "psosm_week9": {
+        "id": "psosm_week9",
+        "title": "Week 09 : Assignment 09",
+        "topic": "LBSNs, Correlation Metrics, Foursquare & Spatial Mobility",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Which of the following are recognized Location-Based Services (LBS) / Location-Based Social Networks?",
+            "options": [
+              "Uber only",
+              "Yelp only",
+              "Foursquare and Gowalla only",
+              "All of the above (Foursquare, Yelp, Gowalla, Uber)"
+            ],
+            "correctIndex": 3,
+            "explanation": "Foursquare, Yelp, Gowalla, and Uber all rely fundamentally on geographic positioning (GPS) to provide core location-centric functionality."
+          },
+          {
+            "id": 2,
+            "question": "What is the fundamental difference between Pearson and Spearman rank correlation?",
+            "options": [
+              "Spearman correlation is always between -1 and 1, while Pearson correlation can have values outside this range.",
+              "Pearson correlation assesses linear relationships, while Spearman correlation evaluates monotonic relationships.",
+              "Spearman correlation is calculated using a formula involving the sum of squared differences, whereas Pearson correlation is based on the product of z-scores.",
+              "All of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Pearson assumes normally distributed continuous linear data; Spearman ranks the observations to capture monotonic non-linear relationships."
+          },
+          {
+            "id": 3,
+            "question": "You have two datasets to correlate where one consists of ordinal ranks and the other continuous numerical values. Which correlation coefficient is most appropriate?",
+            "options": [
+              "Either Spearman or Pearson correlation can be used interchangeably.",
+              "Pearson's correlation coefficient",
+              "Spearman's rank correlation coefficient",
+              "None of the above because correlation coefficients are not applicable in this scenario."
+            ],
+            "correctIndex": 2,
+            "explanation": "When data includes ordinal ranks or violates bivariate normality, Spearman's rank correlation is the method of choice."
+          },
+          {
+            "id": 4,
+            "question": "Which of the following are open text fields in location networks whose validity is not enforced by the system and may contain noise/unreliable locations?",
+            "options": [
+              "Tips",
+              "Both Venue location and User home city",
+              "Dones",
+              "Venue location only"
+            ],
+            "correctIndex": 1,
+            "explanation": "Free-form text input fields like venue name/address and user profile home city lack strict validation and frequently contain whimsical or noisy text."
+          },
+          {
+            "id": 5,
+            "question": "Which of the following is the correct inference from Figure 2 in the LBSN spatial distribution paper?",
+            "options": [
+              "The distributions are normally distributed, with no cities having an exceptionally high number of mayorships, tips, or dones.",
+              "The distributions are evenly balanced, with cities having a nearly equal number of mayorships, tips, or dones.",
+              "The distributions are very skewed, with a few cities having as many as 100 mayorships, tips or dones.",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Activity on LBSNs exhibits heavy spatial clustering, where top metropolitan hubs dominate check-in actions."
+          },
+          {
+            "id": 6,
+            "question": "What is the key difference between a scatter plot and a bar chart?",
+            "options": [
+              "Scatter plots display categorical data, while bar charts are used for numerical data.",
+              "Scatter plots show the relationship between two numerical variables, while bar charts display the frequency or distribution of categorical data.",
+              "Scatter plots are only used for displaying data with a single variable, while bar charts can visualize data with multiple variables.",
+              "All of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Scatter plots map Cartesian coordinates (X, Y) for continuous variables, whereas bar charts compare discrete categorical groups."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following data categories are publicly visible and scrapable on Foursquare?",
+            "options": [
+              "User direct messages",
+              "User payment details",
+              "Checkins (private by default)",
+              "Mayorships, Tips, and Dones"
+            ],
+            "correctIndex": 3,
+            "explanation": "Foursquare check-ins are private to friends, but mayorship badges, public tips, and completed 'dones' are exposed on public profile feeds."
+          },
+          {
+            "id": 8,
+            "question": "Which visualization plot displays data points with a third continuous dimension encoded as marker circle size?",
+            "options": [
+              "Histogram",
+              "Scatter plot",
+              "Bubble plot",
+              "Bar chart"
+            ],
+            "correctIndex": 2,
+            "explanation": "A bubble plot extends a 2D scatter plot by varying the area/radius of the circles to represent a 3rd quantitative variable."
+          },
+          {
+            "id": 9,
+            "question": "What is the primary defining characteristic of Location-Based Social Networks (LBSNs)?",
+            "options": [
+              "They provide a platform for online gaming and virtual reality experiences.",
+              "They enable users to connect with others and share their physical locations and activities.",
+              "They focus exclusively on professional networking and job searching.",
+              "They allow users to share text-based posts with their friends and followers only."
+            ],
+            "correctIndex": 1,
+            "explanation": "LBSNs add geospatial coordinates and physical check-ins as the foundational context for social connections."
+          },
+          {
+            "id": 10,
+            "question": "In the lecture study on user mobility patterns (Figures 4 & 5), which inferences are correct regarding inter-activity time and displacement?",
+            "options": [
+              "50% consecutive actions 1 hour apart only",
+              "All of the above (skewed towards short 1hr intervals, long tail max intervals > 167hrs, ~36% with 0km displacement, ~10% > 6000km)",
+              "Roughly 36% have average displacement of 0 km only",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "The empirical mobility distributions proved that local bursts happen within hours at same venue (0 km), while occasional air travel creates long tail displacements (>6,000 km)."
+          }
+        ]
+      },
+      "psosm_week10": {
+        "id": "psosm_week10",
+        "title": "Week 10 : Assignment 10",
+        "topic": "Location Inference, Handle Changes & Boston Marathon Blasts",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Which statement(s) is/are true regarding the large-scale location inference study presented in the lecture?",
+            "options": [
+              "The authors perform a large-scale inference study in three popular social networks: Foursquare, Google+ and Twitter only",
+              "All of the above (covers Foursquare, Google+, and Twitter across open text fields and map pins)",
+              "The paper looks at different social networks not only Foursquare",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "The comparative study benchmarked user-provided geographical information across Foursquare, Google+, and Twitter."
+          },
+          {
+            "id": 2,
+            "question": "What does the acronym AGI stand for in the context of ambiguous user locations?",
+            "options": [
+              "Valid Artificial General Intelligence",
+              "Valid Ambiguous Geographical Information",
+              "Valid Artificial Geographical Interface",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "AGI stands for Ambiguous Geographical Information (e.g. 'Springfield' which could refer to dozens of distinct cities)."
+          },
+          {
+            "id": 3,
+            "question": "In the figure depicting the quality of User Generated Location Information (UGI), which inference is correct?",
+            "options": [
+              "60% of the users have provided their location information at the district level",
+              "In both figure (a) and (b), roughly 80% of users provide location information at the city level.",
+              "Majority of users provide home location information at country level only",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "The analysis proved that city-level granularity constitutes approximately 80% of valid user-specified geospatial text."
+          },
+          {
+            "id": 4,
+            "question": "What was the conclusion regarding handle change frequency on Twitter?",
+            "options": [
+              "The set of people who change their handle many times is roughly equal to the set of people who do not change their handle.",
+              "The set of people who change their handle many times is slightly larger than those who change their handle a very small number of times.",
+              "The set of people who change their handle many times is slightly smaller than the set of people who change their handle very few times.",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Most users maintain a stable handle or change it only once, while serial handle-changers form a smaller minority."
+          },
+          {
+            "id": 5,
+            "question": "Regarding username change intervals on Twitter, which of the following is the correct inference?",
+            "options": [
+              "35% of users choose a user name unrelated to an old one, and 65% of users reuse an old user name.",
+              "20% of users frequently change user names in short intervals, and 80% change user name rarely after longer intervals.",
+              "20% of users rarely change user names in short intervals and 80% change user names frequently after longer intervals.",
+              "80% of users rarely change user names in short intervals, and 20% change user names frequently after longer intervals."
+            ],
+            "correctIndex": 1,
+            "explanation": "The 80/20 Pareto principle applied: 80% exhibited long stable intervals between changes, while 20% rapidly switched usernames."
+          },
+          {
+            "id": 6,
+            "question": "What observations were made in the Twitter username evolution research paper?",
+            "options": [
+              "Most users created new usernames unrelated to old usernames only",
+              "The paper aimed at finding how and why users change usernames on Twitter only",
+              "All of the above (investigated reasons for handle changes, noticed new unrelated names, absence of cognitive load to recall discarded handles)",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "Users frequently rebranded to unrelated handles because discarding old identities incurs zero cognitive overhead."
+          },
+          {
+            "id": 7,
+            "question": "Which of the following statements is historically accurate regarding the Boston Marathon blasts analyzed in the lecture?",
+            "options": [
+              "Four people were killed and 264 were injured in the incident",
+              "Twin blasts occurred during the Boston Marathon on April 15th, 2009 at 18:50 GMT",
+              "Twin blasts occurred during the Boston Marathon on April 15th, 2013 at 18:50 GMT",
+              "All of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Boston Marathon bombings occurred on April 15, 2013 (18:50 GMT / 2:49 PM EDT)."
+          },
+          {
+            "id": 8,
+            "question": "During the Boston Marathon crisis, what fake content viral patterns were identified on Twitter?",
+            "options": [
+              "Figure (b) depicts a rumor about a young girl running for Sandy Hook victims",
+              "All of the above (fake charity profiles, fabricated rumors about victim children, and viral retweet propagation)",
+              "Figure (a) depicts a tweet from a fake charity profile soliciting donations",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Malicious actors created fake donation accounts (@hopeforboston) and viral emotionally manipulative rumors that misled millions."
+          },
+          {
+            "id": 9,
+            "question": "What were the major research contributions in characterizing fake content during the Boston Marathon bombings?",
+            "options": [
+              "Analyzed suspended user profile interaction graphs only",
+              "Used regression to predict rumor virality only",
+              "All of the above (characterized fake spread via temporal/user attributes, predicted virality using regression, analyzed suspended profile interaction graphs)",
+              "Characterized spread using temporal and user attributes only"
+            ],
+            "correctIndex": 2,
+            "explanation": "Gupta et al. comprehensively modeled rumor kinetics, predictive virality features, and suspended spam bot clusters."
+          },
+          {
+            "id": 10,
+            "question": "What does the temporal tweet distribution figure around the Boston blast depict?",
+            "options": [
+              "The figure shows sentiment polarities over a multi-year period.",
+              "The figure shows the spatial distribution of tweets after the Boston blast.",
+              "The figure shows the temporal distribution of tweets and rumors immediately following the Boston blasts.",
+              "None of the above"
+            ],
+            "correctIndex": 2,
+            "explanation": "The plot tracks tweet volume surges minute-by-minute following the explosions, peaking within the first 2 hours."
+          }
+        ]
+      },
+      "psosm_week11": {
+        "id": "psosm_week11",
+        "title": "Week 11 : Assignment 11",
+        "topic": "APIs, Reidentification, SEO Link Farming & Virality",
+        "questions": [
+          {
+            "id": 1,
+            "question": "State True or False: 'An API is a set of rules and protocols that allows different software applications to communicate with each other, while a programming language is a formal language used to write instructions for a computer to perform specific tasks.'",
+            "options": [
+              "Can't say",
+              "True",
+              "False",
+              "None of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "An API acts as an interface/contract enabling disparate software systems to interact, whereas programming languages are syntactical tools for writing executable logic."
+          },
+          {
+            "id": 2,
+            "question": "Which of the following linguistic features are part of tweet content analysis?",
+            "options": [
+              "Mention of self words only",
+              "Number of followers and retweets",
+              "Presence of pronouns only",
+              "Both Presence of pronouns and Mention of self words (I; my; mine)"
+            ],
+            "correctIndex": 3,
+            "explanation": "Content linguistic features reflect internal vocabulary, such as personal pronouns (we, they) and first-person singular self-referential words (I, my, mine)."
+          },
+          {
+            "id": 3,
+            "question": "Who among the following are most likely to be targeted or participate in link farming rings on social media?",
+            "options": [
+              "Popular users only",
+              "Highly active users only",
+              "All of the above (Highly active users, Legitimate users, Popular users, Bloggers and experts)",
+              "Bloggers and experts only"
+            ],
+            "correctIndex": 2,
+            "explanation": "Link farmers bait a broad spectrum: highly active users, unsuspecting legitimate users via reciprocity, high-reputation hubs, and bloggers."
+          },
+          {
+            "id": 4,
+            "question": "Which of the following is/are recognized username creation behaviors?",
+            "options": [
+              "Temporal behavior patterns only",
+              "Static behavior patterns only",
+              "Occasional reuse patterns only",
+              "Both Static and Temporal behavior patterns"
+            ],
+            "correctIndex": 3,
+            "explanation": "Username creation encompasses static patterns (fixed prefixes, initials) and temporal patterns (evolving names reflecting milestones or current years)."
+          },
+          {
+            "id": 5,
+            "question": "Which of the following is/are recognized username reuse behaviors across platforms?",
+            "options": [
+              "Frequent reuse patterns only",
+              "Static behavior patterns only",
+              "Both Occasional and Frequent reuse patterns",
+              "Occasional reuse patterns only"
+            ],
+            "correctIndex": 2,
+            "explanation": "Users exhibit distinct reuse distributions: some rarely/occasionally reuse handles, while power users frequently reuse identical pseudonyms across apps."
+          },
+          {
+            "id": 6,
+            "question": "Why is the Facebook / Meta developer interface called a 'Graph' API?",
+            "options": [
+              "It allows developers to draw and render 2D/3D graphs and charts.",
+              "It is used exclusively for graph theory and discrete mathematics calculations.",
+              "It represents social connections, entities, and relationships as a graph data structure of nodes and edges.",
+              "It primarily deals with geographical mapping and location-based services."
+            ],
+            "correctIndex": 2,
+            "explanation": "The Facebook Graph API models the social world as a mathematical graph where objects (people, photos, events) are nodes and connections (friends, likes, tags) are edges."
+          },
+          {
+            "id": 7,
+            "question": "Latanya Sweeney's research famously showed how combining 3 quasi-identifiers (5-digit ZIP code, gender, and date of birth) could uniquely identify 87% of the US population. Which term describes this concept?",
+            "options": [
+              "Data Aggregation",
+              "Reidentification",
+              "Data Anonymization",
+              "All of the above"
+            ],
+            "correctIndex": 1,
+            "explanation": "Re-identification is the process of matching anonymized records with auxiliary external datasets (such as voter registries) to reveal individuals' true identities."
+          },
+          {
+            "id": 8,
+            "question": "What is the primary purpose of an API key when interacting with Twitter / X?",
+            "options": [
+              "To limit the number of characters in a tweet",
+              "To verify personal photo identity on the platform",
+              "To encrypt and secure end-to-end direct messages",
+              "To authenticate developer credentials and control authorized access to APIs"
+            ],
+            "correctIndex": 3,
+            "explanation": "API keys and bearer tokens authenticate the requesting application and enforce rate limits and permissions."
+          },
+          {
+            "id": 9,
+            "question": "What is the primary purpose of link farming in the context of Search Engine Optimization (SEO)?",
+            "options": [
+              "To enhance the user experience by improving website navigation and design.",
+              "To manipulate search engine algorithms by generating a large number of low-quality backlinks.",
+              "To create high-quality, relevant backlinks to improve a website's search engine ranking legitimately.",
+              "To increase organic traffic by optimising on-page content and meta tags."
+            ],
+            "correctIndex": 1,
+            "explanation": "In SEO, link farming is a black-hat technique aimed at gaming PageRank algorithms by artificially inflating backlink volume."
+          },
+          {
+            "id": 10,
+            "question": "Which 'V' of social media represents 'Viral trends that spread rapidly across social media platforms within minutes or hours'?",
+            "options": [
+              "Veracity",
+              "Velocity",
+              "Volume",
+              "Value"
+            ],
+            "correctIndex": 1,
+            "explanation": "Velocity represents the tremendous speed and acceleration of data diffusion and viral propagation on social platforms."
+          }
+        ]
+      }
+    }
   }
 };
 
-// Automatically build mixed practice sets for both courses
+// Automatically build mixed practice sets for all courses
 (function() {
   if (typeof coursesData === "undefined") return;
 
@@ -3787,6 +5193,7 @@ const coursesData = {
             options: [...q.options],
             correctIndex: q.correctIndex,
             explanation: q.explanation,
+            diagram: q.diagram,
             weekOrigin: w.title.split(":")[0].trim(),
             sourceTopic: w.topic
           });
@@ -3798,6 +5205,35 @@ const coursesData = {
       title: "⚡ All Weeks Mixed : Complete Mock (120 MCQs)",
       topic: "Comprehensive Exam Practice (All 12 Weeks Mixed - 120 MCQs)",
       questions: shuffle(hciAll)
+    };
+  }
+
+  // Generate PSOSM mixed (110 MCQs)
+  if (coursesData.psosm && coursesData.psosm.assignments) {
+    const psosmAll = [];
+    Object.keys(coursesData.psosm.assignments).forEach(k => {
+      if (k.startsWith("psosm_week")) {
+        const w = coursesData.psosm.assignments[k];
+        w.questions.forEach(q => {
+          psosmAll.push({
+            id: psosmAll.length + 1,
+            originalId: q.id,
+            question: q.question,
+            options: [...q.options],
+            correctIndex: q.correctIndex,
+            explanation: q.explanation,
+            diagram: q.diagram,
+            weekOrigin: w.title.split(":")[0].trim(),
+            sourceTopic: w.topic
+          });
+        });
+      }
+    });
+    coursesData.psosm.assignments["all_mixed"] = {
+      id: "all_mixed",
+      title: "⚡ All Weeks Mixed : Complete Mock (110 MCQs)",
+      topic: "Comprehensive Exam Practice (All 11 Weeks Mixed - 110 MCQs)",
+      questions: shuffle(psosmAll)
     };
   }
 })();
